@@ -1,32 +1,42 @@
-# Prerequisites
-*.d
+#include <iostream>
+#include<string>
+#include <iomanip>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+int main()
+{
+	const int Employee=5;
 
-# Fortran module files
-*.mod
-*.smod
+	int hours[Employee];
+	int wages[Employee];
+	string names[Employee];
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "Enter the name of Employee : " << (i + 1)<<endl;
+		getline(cin,names[i]);
+	}
 
-# Executables
-*.exe
-*.out
-*.app
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "Enter the hours and wages worked by Employee named : "<<names[i]<<endl;
+		cin >> hours[i]>>wages[i];
+	}
+
+	cout << "The information u've entered : \n"<< "Name" << setw(10) << "Hours" << setw(10) << "Wages" << endl;
+
+	for (int i = 0; i < 5; i++)
+	{
+		
+		cout <<names[i]<<setw(10)<< hours[i]<<setw(10)<<wages[i]<<endl;
+	}
+
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "The total earning of " << names[i] << " is : " << (hours[i] * wages[i]) << endl;
+	}
+
+	return 0;
+}
